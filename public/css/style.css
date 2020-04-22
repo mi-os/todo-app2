@@ -204,11 +204,7 @@ header {
   font-size: 16px;
   line-height: 46px;
   color: #ffffff;
-}
-
-.id-column {
-  width: 72px;
-  text-align: center;
+  padding-left: 1vw;
 }
 
 .table-body {
@@ -217,16 +213,11 @@ header {
 
 .table-body li {
   height: 72px;
-  border: 1px solid #f0f4f9;
   border-top: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.table-body .id-column {
-  font-size: 16px;
-  color: #bac6d3;
+  margin-left: 1.8vw;
 }
 
 .table-body .name-column {
