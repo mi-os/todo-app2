@@ -3,14 +3,14 @@
 Node.js (v12.16.2)
 npm (v6.14.4)
 
-##ローカルで実行するコマンド
+ローカルで実行するコマンド
 ```
 npm install
 source ~/.bash_profile
 mysql.server start
 ```
 
-#アプリケーションの実行
+アプリケーションの実行
 ```
 node app.js
 ```
