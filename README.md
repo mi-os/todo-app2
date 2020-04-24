@@ -3,6 +3,8 @@
 - Node.js (v12.16.2)
 - npm (v6.14.4)
 
+![result](https://github.com/github.com/mi-os/todo-app2/images/todo-app.gif?raw=true)
+
 **データベース作成**
 ```
 CREATE DATABASE list_app;
