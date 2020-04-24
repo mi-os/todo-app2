@@ -55,3 +55,22 @@ $heroku local
   heroku run node app.js
 
   https://taskmgmtapp.herokuapp.com/
+
+
+
+  mysql://b80e7b25192051:0def8ee0@us-cdbr-iron-east-01.cleardb.net/heroku_4b2bdf282b1daff?reconnect=true
+
+  heroku config:set DATABASE_URL='mysql://b80e7b25192051:0def8ee0@us-cdbr-iron-east-01.cleardb.net/heroku_4b2bdf282b1daff?reconnect=true'
+
+    host: 'us-cdbr-iron-east-01.cleardb.net',
+    user: 'b80e7b25192051',
+    password: '0def8ee',
+    database: 'heroku_4b2bdf282b1daff'
+
+    mysql --host=us-cdbr-iron-east-01.cleardb.net --user=b80e7b25192051 --password=0def8ee --reconnect heroku_4b2bdf282b1daff
+
+-もしDBが無かったら
+const databaseName = 'heroku_4b2bdf282b1daff';
+connection.query('create database if not exists ??;', heroku_4b2bdf282b1daff);
+connection.query('use ??', heroku_4b2bdf282b1daff);
+connection.query('create table if not exists items(id int auto_increment, name varchar(255), isDone boolean, index(id))');

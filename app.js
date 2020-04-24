@@ -19,7 +19,7 @@ const connection = mysql.createConnection({
 
 connection.query('create database if not exists ??;', heroku_4b2bdf282b1daff);
 connection.query('use ??', heroku_4b2bdf282b1daff);
-connection.query('create table if not exists todo_list(id int auto_increment, name varchar(255), isDone boolean, index(id))');
+connection.query('create table if not exists items(id int auto_increment, name varchar(255), isDone boolean, index(id))');
 
 
 app.get('/', (req, res) => {
