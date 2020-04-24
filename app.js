@@ -1,9 +1,12 @@
 const express = require('express');
 const mysql = require('mysql');
 const app = express();
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
-app.use(express.urlencoded({extended: false}));
+// app.use(express.urlencoded({extended: false}));
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -71,4 +74,8 @@ app.post('/update/:id', (req, res) => {
   // 以下の一覧画面へリダイレクトする処理を削除してください
 });
 
-app.listen(3000);
+connection.connect();
+
+const port = process.removeListener.PORT || 3000;
+
+app.listen(port)
