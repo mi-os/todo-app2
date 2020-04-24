@@ -8,7 +8,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 // app.use(express.urlencoded({extended: false}));
 
-const databaseName = 'heroku_4b2bdf282b1daff';
 
 const connection = mysql.createConnection({
   host: 'us-cdbr-iron-east-01.cleardb.net',
@@ -16,11 +15,6 @@ const connection = mysql.createConnection({
   password: '0def8ee',
   database: 'heroku_4b2bdf282b1daff'
 });
-
-connection.query('create database if not exists ??;', heroku_4b2bdf282b1daff);
-connection.query('use ??', heroku_4b2bdf282b1daff);
-connection.query('create table if not exists items(id int auto_increment, name varchar(255), isDone boolean, index(id))');
-
 
 app.get('/', (req, res) => {
   res.render('top.ejs');
