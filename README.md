@@ -12,6 +12,14 @@ mysql.server start
     "start": "nodemon -r './.module' ./app.js"
   },
 
+-DB local
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'list_app'
+});
+
 ---
 -heroku
 https://taskmgmtapp.herokuapp.com/
