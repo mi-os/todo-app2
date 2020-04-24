@@ -8,19 +8,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 // app.use(express.urlencoded({extended: false}));
 
-const databaseName = 'list_app';
-const tableName = 'items';
-connection.query('create database if not exists ??;', list_app);
-connection.query('use ??', list_app);
-connection.query('create table if not exists items(id int auto_increment, name varchar(255), isDone boolean, index(id))');
-
-
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
   database: 'list_app'
 });
+
+connection.query('create database if not exists ??;', list_app);
+connection.query('use ??', list_app);
+connection.query('create table if not exists items(id int auto_increment, name varchar(255), isDone boolean, index(id))');
 
 app.get('/', (req, res) => {
   res.render('top.ejs');
