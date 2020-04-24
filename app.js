@@ -6,7 +6,6 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
-// app.use(express.urlencoded({extended: false}));
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -14,10 +13,6 @@ const connection = mysql.createConnection({
   password: '',
   database: 'list_app'
 });
-
-connection.query('create database if not exists ??;', list_app);
-connection.query('use ??', list_app);
-connection.query('create table if not exists items(id int auto_increment, name varchar(255), isDone boolean, index(id))');
 
 app.get('/', (req, res) => {
   res.render('top.ejs');
@@ -67,7 +62,6 @@ app.get('/edit/:id', (req, res) => {
 });
 
 app.post('/update/:id', (req, res) => {
-  // 選択されたメモを更新する処理を書いてください
   connection.query(
     'UPDATE items SET name = ? WHERE id = ?',
     [req.body.itemName, req.params.id],
@@ -75,11 +69,12 @@ app.post('/update/:id', (req, res) => {
       res.redirect('/index');
     }
   );
-  // 以下の一覧画面へリダイレクトする処理を削除してください
 });
 
 connection.connect();
 
 const port = process.removeListener.PORT || 3000;
 
-app.listen(port)
+app.listen(port, () => {
+  console.log('ToDo app listening on port 3000!')
+})
