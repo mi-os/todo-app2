@@ -8,12 +8,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 // app.use(express.urlencoded({extended: false}));
 
+const databaseName = 'list_app';
+const tableName = 'items';
+connection.query('create database if not exists ??;', list_app);
+connection.query('use ??', list_app);
+connection.query('create table if not exists items(id int auto_increment, name varchar(255), isDone boolean, index(id))');
+
 
 const connection = mysql.createConnection({
-  host: 'us-cdbr-iron-east-01.cleardb.net',
-  user: 'b80e7b25192051',
-  password: '0def8ee',
-  database: 'heroku_4b2bdf282b1daff'
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'list_app'
 });
 
 app.get('/', (req, res) => {
