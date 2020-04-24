@@ -17,5 +17,5 @@ node app.js
 
 実行結果を確認する
 ```
-> [http://localhost:3000] (http://localhost:3000/)
+> [http://localhost:3000](http://localhost:3000/)
 ```
