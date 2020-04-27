@@ -3,6 +3,8 @@
 - Node.js (v12.16.2)
 - npm (v6.14.4)
 
+![](todo-app-480.gif)
+
 **データベース作成**
 ```
 CREATE DATABASE list_app;
