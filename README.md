@@ -3,7 +3,6 @@
 - Node.js (v12.16.2)
 - npm (v6.14.4)
 
-![](todo-app-480.gif)
 ![](todo-app-640-hd.gif)
 
 **データベース作成**
